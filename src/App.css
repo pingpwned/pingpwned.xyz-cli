@@ -1,0 +1,39 @@
+body {
+  min-height: 100vh;
+  position: relative;
+}
+footer {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+}
+.offset-top {
+  margin-top: 50px;
+}
+
+.App {
+  text-align: center;
+}
+.nav-item {
+  width: 25%
+}
+@media (max-width: 600px) {
+  nav .nav-item {
+    width: 50%;
+  }
+  nav .nav-item.nav-link.active {
+    position: relative;
+  }
+  nav .nav-item.nav-link.active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0px;
+    border: 1px solid #dee2e6;
+  }
+  .nav-tabs {
+    border: none !important;
+  }
+}
