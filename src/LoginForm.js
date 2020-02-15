@@ -23,7 +23,7 @@ class LoginForm extends React.Component {
     const token = localStorage.getItem('accessToken')
     if ( token ) {
       let username = jwt.decode(localStorage.getItem('accessToken')).username;
-      const response = await fetch(`https://api.pingpwned.xyz/users/${username}`, {
+      const response = await fetch(`http://localhost:3001/users/${username}`, {
         method: 'GET',
         headers: {
           'Authorization': 'Bearer '+localStorage.getItem('accessToken'),
@@ -173,7 +173,7 @@ class LoginForm extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
     if (this.state.registration) {
-      const response = await fetch('https://api.pingpwned.xyz/users/registerDevice', {
+      const response = await fetch('http://localhost:3001/users/registerDevice', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -211,7 +211,7 @@ class LoginForm extends React.Component {
       }
   
     } else {
-      const response = await fetch('https://api.pingpwned.xyz/users/verifyDevice', {
+      const response = await fetch('http://localhost:3001/users/verifyDevice', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -220,6 +220,8 @@ class LoginForm extends React.Component {
       });
       //Bearer
       const res = await response.json();
+
+      console.log(res, 'res')
             
       let publicKey = {
           ...res.publicKey,
@@ -321,7 +323,7 @@ class LoginForm extends React.Component {
       username: this.state.username,
     })
     try{
-      await fetch('https://api.pingpwned.xyz/users/saveDevice', {
+      await fetch('http://localhost:3001/users/saveDevice', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -348,7 +350,7 @@ class LoginForm extends React.Component {
           username: this.state.username,
       })
       try{
-        const response = await fetch('https://api.pingpwned.xyz/users/verification', {
+        const response = await fetch('http://localhost:3001/users/verification', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

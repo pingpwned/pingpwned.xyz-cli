@@ -385,12 +385,19 @@ export default class App extends React.Component {
                         <div className="col align-self-center offset-top">
                           {
                             [0,1,2,3,4,5].map((item, i) => {
-                              return (<>
-                                <p key={i}>{ (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) }</p>
-                                
-                              </>)
-                            })
-                          }
+                              return (
+                                <span key={i}>
+                                  <p>{(crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + 
+                                    (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + 
+                                    (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + 
+                                    (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + 
+                                    (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + 
+                                    (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5) + 
+                                    (crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295).toString(36).substring(2, 5)
+                                  }</p>
+                                </span>)
+                              })
+                            }
                           </div>
                         </div>
                       </div>
