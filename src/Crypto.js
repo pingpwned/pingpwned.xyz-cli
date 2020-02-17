@@ -284,12 +284,12 @@ export default class CryptoComponent extends React.Component {
                             <div className="row flex-lg-row justify-content-between">
                             <div className="form-group col-6">
                                 <label htmlFor="privateKeyValue">Private key</label>
-                                <textarea className="form-control" id="privateKeyValue" rows="10"></textarea>
+                                <textarea className="form-control" id="privateKeyValue" rows="10" disabled={true}></textarea>
                                 <small>* Keep it secret and use it for creating digital signatures.</small>
                             </div>
                             <div className="form-group col-6">
                                 <label htmlFor="publicKeyValue">Public key</label>
-                                <textarea className="form-control" id="publicKeyValue" rows="10"></textarea>
+                                <textarea className="form-control" id="publicKeyValue" rows="10" disabled={true}></textarea>
                                 <small>* Share it with your contacts so they can verify your digital signatures.</small>
                             </div>
                             </div>
